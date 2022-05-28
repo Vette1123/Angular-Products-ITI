@@ -1,0 +1,40 @@
+<div class="container mx-auto my-12">
+  <div class="card card-side bg-base-100 shadow-xl">
+    <figure>
+      <img
+        src="{{ product?.image }}"
+        alt="Movie"
+        class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+      />
+    </figure>
+    <div class="card-body">
+      <!-- divider -->
+      <div class="flex flex-col w-full">
+        <div class="grid h-20 card bg-base-300 rounded-box place-items-center">
+          {{ product?.title }}
+        </div>
+        <div class="divider"></div>
+        <div
+          class="grid h-20 card bg-base-300 rounded-box place-items-center px-2 py-4"
+        >
+          {{ product?.description }}
+        </div>
+      </div>
+      <br />
+      <div class="flex w-full">
+        <div
+          class="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center"
+        >
+          Price : {{ product?.price }}
+        </div>
+        <div class="divider divider-horizontal">-</div>
+        <div
+          class="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center"
+        >
+          Category : {{ product?.category }}
+        </div>
+      </div>
+      <button class="btn btn-primary mt-4" (click)="goBack()">Go Back</button>
+    </div>
+  </div>
+</div>
