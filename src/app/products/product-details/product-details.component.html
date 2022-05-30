@@ -17,7 +17,7 @@
         <div
           class="grid h-20 card bg-base-300 rounded-box place-items-center px-2 py-4"
         >
-          {{ product?.description }}
+          {{ product?.description | slice: 0:30 }}
         </div>
       </div>
       <br />
@@ -25,7 +25,7 @@
         <div
           class="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center"
         >
-          Price : {{ product?.price }}
+          Price : {{ product?.price }} $
         </div>
         <div class="divider divider-horizontal">-</div>
         <div

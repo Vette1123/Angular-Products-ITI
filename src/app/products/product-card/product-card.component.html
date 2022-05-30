@@ -9,7 +9,7 @@
   <div class="card-body">
     <h2 class="card-title">{{ product?.title }}</h2>
     <hr />
-    <p>Category: {{ product?.category }}$</p>
+    <p>Category: {{ product?.category }}</p>
     <p>Price: {{ product?.price }}$</p>
     <div class="card-actions justify-end" (click)="productDetails()">
       <button [routerLink]="['/products', product?.id]" class="btn btn-primary">
