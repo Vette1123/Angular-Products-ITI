@@ -5,7 +5,11 @@
 </ul> -->
 
 <div class="container mx-auto my-4">
-  <div class="grid grid-cols-3 gap-8">
+  <app-add-product
+    class="mb-12"
+    (productadded)="addProduct($event)"
+  ></app-add-product>
+  <div class="grid grid-cols-3 gap-8 mt-12">
     <app-product-card
       *ngFor="let product of allProducts"
       [product]="product"

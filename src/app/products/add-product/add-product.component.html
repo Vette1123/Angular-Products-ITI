@@ -1,0 +1,89 @@
+<div class="container mx-auto mt-12">
+  <form [formGroup]="myform">
+    <div class="mb-6">
+      <label
+        for="title"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >Title</label
+      >
+      <input
+        type="text"
+        id="title"
+        formControlName="title"
+        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+        placeholder="sadge@sade.com"
+        required
+      />
+      <div class="alert alert-danger" [hidden]="title.valid || title.pristine">
+        title required
+      </div>
+    </div>
+    <div class="mb-6">
+      <label
+        for="description"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >Description</label
+      >
+      <input
+        type="text"
+        id="description"
+        formControlName="description"
+        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+        required
+      />
+      <div
+        class="alert alert-danger"
+        [hidden]="description.valid || description.pristine"
+      >
+        description error
+      </div>
+      <div class="alert alert-danger" *ngIf="description.errors?.['minlength']">
+        error minLength
+      </div>
+    </div>
+    <div class="mb-6">
+      <label
+        for="image"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >Image Url</label
+      >
+      <input
+        type="password"
+        id="image"
+        formControlName="image"
+        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+        required
+      />
+      <div class="alert alert-danger" [hidden]="image.valid || image.pristine">
+        image url required
+      </div>
+    </div>
+
+    <div class="mb-6">
+      <label
+        for="image"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >Price</label
+      >
+      <input
+        type="text"
+        id="price"
+        formControlName="price"
+        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+        required
+      />
+      <div class="alert alert-danger" [hidden]="price.valid || price.pristine">
+        price required
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      [disabled]="myform.invalid"
+      (click)="add(myform.value)"
+    >
+      Add New Product
+    </button>
+  </form>
+</div>

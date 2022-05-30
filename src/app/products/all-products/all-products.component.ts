@@ -10,8 +10,13 @@ import { ProductsInterface } from '../productsinterface/products-interface';
 export class AllProductsComponent implements OnInit {
   constructor(private productsService: ProductsService) {}
   allProducts?: ProductsInterface[];
+  productadded?: ProductsInterface;
 
   ngOnInit(): void {
     this.allProducts = this.productsService.getAllProducts();
+  }
+
+  addProduct(e: any) {
+    this.allProducts?.push(e);
   }
 }

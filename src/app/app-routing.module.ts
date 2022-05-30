@@ -6,6 +6,8 @@ import { ProductDetailsComponent } from './products/product-details/product-deta
 const routes: Routes = [
   { path: 'products', component: AllProductsComponent, pathMatch: 'full' },
   { path: 'products/:id', component: ProductDetailsComponent },
+  { path: 'login', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'register', redirectTo: '/register', pathMatch: 'full' },
   { path: '**', redirectTo: '/products', pathMatch: 'full' },
 ];
 
