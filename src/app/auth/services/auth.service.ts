@@ -29,4 +29,20 @@ export class AuthService {
       })
     );
   }
+  register(model: any) {
+    return this.http.post(this.authUrl, model).pipe(
+      map((response: any) => {
+        const user = response;
+        console.log(user);
+        if (user) {
+          localStorage.setItem('token', user.token);
+          return user;
+        }
+      }),
+      catchError((error: any) => {
+        console.log(error);
+        return error;
+      })
+    );
+  }
 }
